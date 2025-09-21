@@ -1,0 +1,5 @@
+# Reinsurance AI Platform
+
+## Overview
+This project redefines reinsurance business processes using AI.  
+Stack: **React (Vite) + Node.js (Express + Sequelize + PostgreSQL) + FastAPI**
