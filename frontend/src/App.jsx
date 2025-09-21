@@ -1,36 +1,19 @@
-import React, { useState } from "react";
-import Sidebar from "./components/Sidebar";  
-import Topbar from "./components/Topbar";    
-import Dashboard from "./pages/Dashboard";
-import Clients from "./pages/Clients";
-import Brokers from "./pages/Brokers";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
-const App = () => {
-  const [activePage, setActivePage] = useState("dashboard");
-
-  const renderPage = () => {
-    switch (activePage) {
-      case "clients":
-        return <Clients />;
-      case "brokers":
-        return <Brokers />;
-      default:
-        return <Dashboard />;
-    }
-  };
-
+function App() {
   return (
-    <div className="app-container">
-      {}
-      <Sidebar setActivePage={setActivePage} />
-
-      {}
-      <div className="main-content">
-        <Topbar />
-        {renderPage()}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
