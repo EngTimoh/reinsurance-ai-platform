@@ -1,21 +1,25 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "main": "module",
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "sequelize": "^6.29.3",
-    "pg": "^8.11.0",
-    "pg-hstore": "^2.3.4"
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.2",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22",
-    "eslint": "^8.0.0"
+    "eslint": "^8.0.0",
+    "nodemon": "^2.0.22"
   }
 }

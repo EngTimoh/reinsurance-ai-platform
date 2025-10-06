@@ -1,22 +1,23 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import sequelize from "./db.js";
 
-dotenv.config();
+import express from 'express';
+import connectDB from './config/db.js';
+import authRoutes from './routes/auth.js';
+import claimRoutes from './routes/claims.js';   
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 const app = express();
-
-app.use(cors());
 app.use(express.json());
 
-sequelize.sync().then(() => {
-  console.log("✅ PostgreSQL connected & models synced");
+connectDB();
+
+app.use('/api/auth', authRoutes);
+app.use('/api/claims', claimRoutes);   
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
+app.listen(5000, () => {
+  console.log('Server running on port 5000');
 });
-
-import authRoutes from "./routes/auth.js";
-import healthRoutes from "./routes/health.js";
-app.use("/auth", authRoutes);
-app.use("/health", healthRoutes);
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));

@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="footer">
       <p>📍 Address: Nairobi, Kenya</p>
       <p>📞 Phone: +254-115709680</p>
-      <p>📧 Email: info@reinsureai.com</p>
+      <p>📧 Email: otienotimothy198@gmail.com</p>
       <div className="socials">
-        <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a>
+        <a href="#">LinkedIn</a> | <a href="#">X</a> | <a href="https://www.facebook.com/blessings.tonny.2025">Facebook</a>
       </div>
     </footer>
   );

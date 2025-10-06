@@ -27,7 +27,7 @@ const Carousel = () => {
       <div className="carousel-overlay">
         <h1>Welcome to ReInsure AI</h1>
         <p>Smarter reinsurance with AI-powered insights.</p>
-        <a href="#register" className="cta-button">
+        <a href="http://localhost:5174/register" className="cta-button">
           Get Started
         </a>
       </div>
